@@ -52,3 +52,7 @@ monitor/cache/*
 
 # Local Netlify folder
 .netlify
+
+# Oracle 
+
+dump.rdb

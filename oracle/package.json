@@ -24,6 +24,7 @@
     "mev:sender:foreign": "./scripts/start-worker.sh mevSender foreign-mev-sender",
     "dev": "concurrently -n 'watcher:signature-request,watcher:collected-signatures,watcher:affirmation-request,watcher:transfer, sender:home,sender:foreign' -c 'red,green,yellow,blue,magenta,cyan' 'yarn watcher:signature-request' 'yarn watcher:collected-signatures' 'yarn watcher:affirmation-request' 'yarn watcher:transfer' 'yarn sender:home' 'yarn sender:foreign'",
     "test": "NODE_ENV=test mocha",
+    "bridge": "sh ./scripts/startBridge.sh",
     "test:watch": "NODE_ENV=test mocha --watch --reporter=min",
     "coverage": "NODE_ENV=test nyc --reporter=text --reporter=html mocha",
     "postinstall": "mkdir -p logs"
