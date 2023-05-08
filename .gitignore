@@ -10,7 +10,6 @@ dist
 
 # misc
 .DS_Store
-*.env*
 !.env.example
 .idea
 .nyc_output
