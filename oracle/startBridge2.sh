@@ -1,12 +1,11 @@
 #!/bin/sh
 
-yarn watcher:signature-request & pids=$!
-yarn watcher:collected-signatures & pids+=" $!"
-yarn watcher:affirmation-request & pids+=" $!"
-yarn sender:home & pids+=" $!"
-yarn sender:foreign & pids+=" $!"
+yarn watcher:signature-request &
+yarn watcher:collected-signatures &
+yarn watcher:affirmation-request &
+yarn sender:home &
+yarn sender:foreign &
 
-trap "kill $pids" SIGTERM SIGINT
-wait $pids
+wait
 
-echo "Oracle StartBridge DONE"
+echo "oracle: startbridge done"
