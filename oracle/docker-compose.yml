@@ -4,7 +4,9 @@ services:
   rabbit:
     cpus: 0.3
     mem_limit: 500m
-    environment: ['RABBITMQ_NODENAME=node@rabbit']
+    environment: 
+      - 'RABBITMQ_DEFAULT_USER=realt'
+      - 'RABBITMQ_DEFAULT_PASS=polyalcohol4759506690770780'
     hostname: rabbit
     image: rabbitmq:3
     networks:
@@ -18,7 +20,9 @@ services:
   redis:
     cpus: 0.1
     mem_limit: 500m
-    command: [redis-server, --appendonly, 'yes']
+    environment: 
+      - REDIS_HOST_PASSWORD=Predefinite2684076950235461
+    command: [redis-server, --appendonly, 'yes', --requirepass, $REDIS_HOST_PASSWORD]
     hostname: redis
     image: redis:4
     networks:
